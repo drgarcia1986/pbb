@@ -7,7 +7,7 @@ def here(*dirs):
     return os.path.join(os.path.abspath(os.path.dirname(__file__)), *dirs)
 
 
-BASE_DIR = here('..', '..')
+BASE_DIR = here('..')
 
 
 def root(*dirs):
@@ -60,7 +60,7 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'config.urls'
+ROOT_URLCONF = 'urls'
 
 TEMPLATES = [
     {
@@ -78,7 +78,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'config.wsgi.application'
+WSGI_APPLICATION = 'wsgi.application'
 
 
 # Database
