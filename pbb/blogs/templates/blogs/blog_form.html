@@ -4,7 +4,7 @@
 
 {% block content %}
 <h1>{{ blog.title }}</h1>
-<p>{{ blog.url }}</p>
+<p><a href="{{ blog.url }}" target="_blank">{{ blog.url }}</a></p>
 
 <form class="form-horizontal" action="{% url "blogs:update" blog.pk %}" method="post">
     {% csrf_token %}
