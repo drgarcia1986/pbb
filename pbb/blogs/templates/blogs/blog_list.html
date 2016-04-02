@@ -16,7 +16,7 @@
 
 <div class="list-group">
     {% for blog in blog_list %}
-        <a href="{% url "blogs:update" blog.pk %}" class="list-group-item">
+        <a href="{% url "blogs:update" blog.slug %}" class="list-group-item">
             <h4 class="list-group-item-heading">{{ blog.title }}</h4>
             <p class="list-group-item-text">URL: {{ blog.url }}</p>
             <p class="list-group-item-text">
