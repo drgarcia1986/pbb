@@ -18,4 +18,4 @@ class Blog(TimeStampedModel):
     def save(self, *args, **kwargs):
         if not self.id:
             self.slug = slugify(self.title)
-        super(Blog, self).save(*args, **kwargs)
+        super().save(*args, **kwargs)

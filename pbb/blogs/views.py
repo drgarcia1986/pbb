@@ -9,7 +9,7 @@ class BlogListView(ListView):
     model = Blog
 
     def get_queryset(self):
-        queryset = super(BlogListView, self).get_queryset()
+        queryset = super().get_queryset()
 
         q = self.request.GET.get('q')
         if q:
