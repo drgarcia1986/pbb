@@ -5,6 +5,15 @@
 {% block content %}
 <h1>Blogs</h1>
 
+<form action="{% url "blogs:list" %}" method="GET">
+    <div class="input-group">
+        <input name="q" type="text" class="form-control" placeholder="Título do blog">
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="submit">Buscar</button>
+        </span>
+    </div>
+</form>
+
 <div class="list-group">
     {% for blog in blog_list %}
         <a href="{% url "blogs:update" blog.pk %}" class="list-group-item">

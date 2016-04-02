@@ -8,6 +8,14 @@ from .models import Blog
 class BlogListView(ListView):
     model = Blog
 
+    def get_queryset(self):
+        queryset = super(BlogListView, self).get_queryset()
+
+        q = self.request.GET.get('q')
+        if q:
+            return queryset.filter(title__icontains=q)
+        return queryset
+
 
 class BlogUpdateView(SuccessMessageMixin, UpdateView):
     model = Blog
