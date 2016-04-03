@@ -13,7 +13,7 @@ def _parse_feed_datetime(feed_datetime):
 
 
 def _get_post_date(post):
-    for name in ('publised_parsed', 'created_parsed', 'updated_parsed'):
+    for name in ('published_parsed', 'created_parsed', 'updated_parsed'):
         if hasattr(post, name):
             return _parse_feed_datetime(getattr(post, name))
     return
@@ -21,7 +21,7 @@ def _get_post_date(post):
 
 def _posts_iterator(blog, posts):
     date_to_filter = blog.created_at
-    last_feed = blog.feed.last()
+    last_feed = blog.feeds.last()
     if last_feed:
         date_to_filter = last_feed.published_at
     date_to_filter = date_to_filter.replace(tzinfo=None)
